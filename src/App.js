@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Greet from './greet';
 import AddItem from './add_Item';
 import DeleteItem from './delete_Item';
-// import UseEffect from './useEffect';
+
 
 // separate components
 // pass props to new comp
@@ -23,7 +23,7 @@ class App extends Component {
 updateInput=(key,value)=>{
   //update react state
   this.setState({
-  [key]:value
+  [key]:value,
   });
 }
 
@@ -59,6 +59,13 @@ deleteItem=(id)=>{
   const updatedList=list.filter(item=>item.id !==id);
   this.setState({list:updatedList});
 }
+componentDidMount(){
+  console.log(this.state.list)
+};
+
+componentDidUpdate(){
+  console.log(this.state.list)
+};
 
 //Add item section
   render() {
