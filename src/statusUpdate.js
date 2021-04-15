@@ -16,6 +16,7 @@ class StatusUpdate extends React.Component{
         console.log('will this work');
         return(
             <div>
+                <p>Git Update?</p>
                 <h1> Getting Things Done ✅</h1>
                 <p>Status: {this.state.status} </p>
                 <button onClick={this.updateStatus}> change status</button>
