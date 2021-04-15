@@ -18,7 +18,7 @@ class StatusUpdate extends React.Component{
             <div>
                 <h1> Getting Things Done ✅</h1>
                 <p>Status: {this.state.status} </p>
-                <button onClick={this.updateStatus}>change status</button>
+                <button onClick={this.updateStatus}> change status</button>
             </div>
         );
     }
