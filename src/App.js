@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Greet from './greet';
+import StatusUpdate from './statusUpdate';
 import AddItem from './add_Item';
 import DeleteItem from './delete_Item';
 
@@ -23,7 +23,7 @@ class App extends Component {
 updateInput=(key,value)=>{
   //update react state
   this.setState({
-  [key]:value,
+  [key]:value
   });
 }
 
@@ -51,7 +51,7 @@ addItem=()=>{
 
 
 //Delete item Function
-deleteItem=(id)=>{
+ deleteItem=(id)=>{
   //copy current list of items
   const list = [...this.state.list];
 
@@ -59,13 +59,6 @@ deleteItem=(id)=>{
   const updatedList=list.filter(item=>item.id !==id);
   this.setState({list:updatedList});
 }
-componentDidMount(){
-  console.log(this.state.list)
-};
-
-componentDidUpdate(){
-  console.log(this.state.list)
-};
 
 //Add item section
   render() {
@@ -73,13 +66,17 @@ componentDidUpdate(){
       <div className='app'>
         <div>
           
-        <div className='greet'>
-          <Greet/>
+        
+        <div className='statusUpdate'>
+        <StatusUpdate/>
         </div> 
-          <div>
+        
+        <div>
           <AddItem new_Item={this.state.newItem} updateInput={this.updateInput} addItem={this.addItem}/>
           </div>
+          
           <div>
+          <br></br>
             <DeleteItem deleteItem={this.deleteItem}/>
           </div>
 
@@ -92,6 +89,7 @@ componentDidUpdate(){
           )})
         }
       </ul>
+      
         </div>
       </div>
     );
